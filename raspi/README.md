@@ -1,11 +1,11 @@
-# 🐍 Raspberry Pi & KNN Setup Guide
+# Raspberry Pi & KNN Setup Guide
 
 This document explains how to set up and run the **Raspberry Pi data-collection and KNN classification system**.  
 The Pi reads water-quality sensors through the MCP3008 ADC, performs local KNN analysis, and sends the readings + results to the **self-hosted Supabase** backend.
 
 ---
 
-## 📘 Overview
+## Overview
 
 ### Responsibilities
 - Read **analog sensors** (Temperature, pH, TDS) via **MCP3008**  
