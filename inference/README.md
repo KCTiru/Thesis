@@ -155,7 +155,7 @@ Expected response:
 
 ---
 
-## Step 6. Integration with Supabase
+## Integration with Supabase
 The container automatically sends prediction results to Supabase using Python’s psycopg2 or Supabase REST API.
 
 You can configure the connection by editing environment variables or hardcoding the Supabase credentials in server.py.
@@ -179,7 +179,7 @@ Whenever an image is processed, results are inserted into this table:
 
 ---
 
-## Step 7. Integration with Raspberry Pi
+## Integration with Raspberry Pi
 The Raspberry Pi script single.py captures images using a webcam and sends them to the CNN container:
 ```python
 url = "http://<host-machine-ip>:8080/predict"
@@ -191,3 +191,43 @@ print(response.json())
 Replace <host-machine-ip> with the IP address of the computer running the CNN container.
 ```
 ---
+
+## Stop and Manage the Container
+
+Stop the CNN container:
+```bash
+docker stop cnn-service
+```
+Restart it:
+```bash
+docker start cnn-service
+```
+View live logs:
+```bash
+docker logs -f cnn-service
+```
+Remove the container:
+```bash
+docker rm -f cnn-service
+```
+---
+
+## Model Replacement or Retraining
+
+You can update the model anytime without rebuilding the entire container.
+1. Replace the file at:
+```bash
+model/resnet.pth
+```
+2. Rebuild the image:
+```bash
+docker build -t cnn-service .
+```
+3. Restart the container.
+If you wish to use a different model architecture, ensure server.py loads it correctly.
+
+Example snippet:
+```python
+model = torch.load(os.getenv("MODEL_PATH"), map_location="cpu")
+model.eval()
+```
