@@ -212,7 +212,6 @@ to upload image inference results and confidence scores.
 | Problem | Possible Cause | Fix |
 |------|----------|----------|
 | port 8080 already in use | Another service is running | Edit docker-compose.yml to change ports |
-| Supabase Studio not loading | loading
-Container crash or build failed | Run docker compose logs -f |
+| Supabase Studio not loading | loading Container crash or build failed | Run docker compose logs -f |
 | Data not saving | Wrong keys or URL | Check .env and ensure Raspberry Pi uses correct SUPABASE_URL |
 | API 404 errors | Wrong table or endpoint | Confirm table name matches |
