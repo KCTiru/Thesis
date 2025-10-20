@@ -232,3 +232,13 @@ Example snippet:
 model = torch.load(os.getenv("MODEL_PATH"), map_location="cpu")
 model.eval()
 ```
+---
+
+## Troubleshooting
+
+| Issue | Possible Cause | Fix |
+|------|----------|----------|
+| torch import errors | Version mismatch | Rebuild the container |
+| Port 8080 in use | Another service using it | Run on a different port (-p 8090:8080) |
+| Supabase connection refused | Supabase not running | Start Supabase via docker compose up -d |
+| Slow predictions | Using CPU-only PyTorch | Try optimizing model or using a smaller one or use CUDA support  |
