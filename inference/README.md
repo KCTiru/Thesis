@@ -187,7 +187,7 @@ files = {"file": open("capture.jpg", "rb")}
 response = requests.post(url, files=files)
 print(response.json())
 ```
-
+```text
 Replace <host-machine-ip> with the IP address of the computer running the CNN container.
-
+```
 ---
