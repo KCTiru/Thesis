@@ -224,6 +224,7 @@ model/resnet.pth
 docker build -t cnn-service .
 ```
 3. Restart the container.
+
 If you wish to use a different model architecture, ensure server.py loads it correctly.
 
 Example snippet:
