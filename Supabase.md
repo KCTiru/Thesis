@@ -1,11 +1,11 @@
-# 🗄️ Supabase Setup Guide
+# Supabase Setup Guide
 
 This guide explains how to **self-host Supabase** using Docker and configure it as the central database and API for your Raspberry Pi + CNN system.  
 It will allow you (and future researchers) to run the full stack **offline**, without relying on the Supabase Cloud service.
 
 ---
 
-## 📘 Overview
+## Overview
 
 Supabase provides:
 - **PostgreSQL database** for storing sensor readings and model outputs  
@@ -18,7 +18,7 @@ In this project, Supabase stores:
 
 ---
 
-## 🧱 Folder Structure
+## Folder Structure
 
 You should have a folder named `supabase/` inside your repository:
 
